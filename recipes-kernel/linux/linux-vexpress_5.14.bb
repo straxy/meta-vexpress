@@ -2,8 +2,6 @@ SUMMARY = "Linux Kernel for vexpress-a9"
 SECTION = "kernel"
 LICENSE = "GPLv2"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
-
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
 inherit kernel siteinfo
@@ -32,11 +30,12 @@ LOCALVERSION = "-vexpress"
 SRCREV = "787ccb9cba759e35906f1793fbf975d3336053d9"
 SRC_URI = " \
     git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=https;branch=${SRCBRANCH} \
-    file://defconfig \
 "
 S = "${WORKDIR}/git"
 
 # }
 
 COMPATIBLE_MACHINE = "(vexpress-qemu)"
+
+KBUILD_DEFCONFIG_vexpress-qemu = "multi_v7_defconfig"
 
