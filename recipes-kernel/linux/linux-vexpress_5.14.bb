@@ -10,27 +10,33 @@ inherit kernel siteinfo
 
 DEPENDS += "lzop-native bc-native"
 
-LINUX_VERSION ?= "5.9.11"
+LINUX_VERSION ?= "5.14.3"
+
+# If archive is used
+# {
 
 # PV = "${LINUX_VERSION}"
 # S = "${WORKDIR}/linux-${PV}"
 # SRC_URI = " \
 #     https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${PV}.tar.xz \
 # "
-# SRC_URI[md5sum] = "530543935698468bf30dfacd4a20d84f"
-# SRC_URI[sha256sum] = "5eb20a65a410669928f94b3975872e493fa6d0fe441c6a78b7564affa2a5d260"
+# SRC_URI[md5sum] = "b45b18effd1af9077de47f4bc496d2ab"
+# SRC_URI[sha256sum] = "c6c340be69e22021d9406c51467d03e2e28fb7221939b2ef114cac3d3602a8d8"
 
-SRCBRANCH = "linux-5.9.y"
+# } else
+# If git is used
+# {
+
+SRCBRANCH = "linux-5.14.y"
 LOCALVERSION = "-vexpress"
-SRCREV = "38cbdc4e3d0bd01bfb3ec16081bbf7dadfafd659"
+SRCREV = "787ccb9cba759e35906f1793fbf975d3336053d9"
 SRC_URI = " \
     git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=https;branch=${SRCBRANCH} \
     file://defconfig \
 "
-
 S = "${WORKDIR}/git"
 
-COMPATIBLE_MACHINE = "(vexpress-qemu)"
+# }
 
-KBUILD_DEFCONFIG_vexpress-qemu = "multi_v7_defconfig"
+COMPATIBLE_MACHINE = "(vexpress-qemu)"
 
