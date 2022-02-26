@@ -1,7 +1,7 @@
 require recipes-bsp/u-boot/u-boot-common.inc
 require recipes-bsp/u-boot/u-boot.inc
 
-DEPENDS += "bc-native dtc-native"
+DEPENDS += "bc-native dtc-native u-boot-default-script"
 
 DESCRIPTION = "U-Boot supporting vexpress-a9 board."
 
