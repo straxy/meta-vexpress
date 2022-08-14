@@ -33,10 +33,10 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 SRCBRANCH = "linux-5.14.y"
 LOCALVERSION = "-vexpress"
 SRCREV = "787ccb9cba759e35906f1793fbf975d3336053d9"
-SRC_URI = " \
-    git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=https;branch=${SRCBRANCH} \
-    file://graphics.cfg \
-"
+SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=https;branch=${SRCBRANCH} \
+           file://graphics.cfg \
+           file://0001-Device-tree-update-for-mmsens.patch \
+           "
 S = "${WORKDIR}/git"
 
 # }
