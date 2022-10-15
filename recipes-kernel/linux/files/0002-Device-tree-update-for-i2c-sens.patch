@@ -1,0 +1,31 @@
+From 9630f09c12d1480e3c1902b3ea7247d0b7aaa976 Mon Sep 17 00:00:00 2001
+From: Strahinja Jankovic <strahinja.p.jankovic@gmail.com>
+Date: Thu, 16 October 2022 20:24:26 +0200
+Subject: [PATCH] Device tree update for I2C sens
+
+Signed-off-by: Strahinja Jankovic <strahinja.p.jankovic@gmail.com>
+---
+ arch/arm/boot/dts/vexpress-v2m.dtsi | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm/boot/dts/vexpress-v2m.dtsi b/arch/arm/boot/dts/vexpress-v2m.dtsi
+index fd42e1194179..50adad5623e0 100644
+--- a/arch/arm/boot/dts/vexpress-v2m.dtsi
++++ b/arch/arm/boot/dts/vexpress-v2m.dtsi
+@@ -198,6 +198,13 @@
+ 					clock-names = "wdogclk", "apb_pclk";
+ 				};
+ 
++				i2c_ctrl: i2c@10000 {
++					compatible = "arm,versatile-i2c";
++					reg = <0x10000 0x1000>;
++					#address-cells = <1>;
++					#size-cells = <0>;
++				};
++
+ 				v2m_timer01: timer@11000 {
+ 					compatible = "arm,sp804", "arm,primecell";
+ 					reg = <0x11000 0x1000>;
+-- 
+2.17.1
+

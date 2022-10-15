@@ -22,6 +22,8 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 # SRC_URI = " \
 #     https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${PV}.tar.xz \
 #     file://graphics.cfg \
+#     file://0001-Device-tree-update-for-mmsens.patch \
+#     file://0002-Device-tree-update-for-i2c-sens.patch \
 # "
 # SRC_URI[md5sum] = "b45b18effd1af9077de47f4bc496d2ab"
 # SRC_URI[sha256sum] = "c6c340be69e22021d9406c51467d03e2e28fb7221939b2ef114cac3d3602a8d8"
@@ -36,6 +38,7 @@ SRCREV = "787ccb9cba759e35906f1793fbf975d3336053d9"
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=https;branch=${SRCBRANCH} \
            file://graphics.cfg \
            file://0001-Device-tree-update-for-mmsens.patch \
+           file://0002-Device-tree-update-for-i2c-sens.patch \
            "
 S = "${WORKDIR}/git"
 
