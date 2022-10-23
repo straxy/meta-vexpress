@@ -12,7 +12,7 @@ DEPENDS += "lzop-native bc-native"
 LINUX_VERSION ?= "5.14.3"
 PV = "${LINUX_VERSION}"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 # If archive is used
 # {
@@ -46,6 +46,6 @@ S = "${WORKDIR}/git"
 
 COMPATIBLE_MACHINE = "(vexpress-qemu)"
 
-KBUILD_DEFCONFIG_vexpress-qemu = "multi_v7_defconfig"
+KBUILD_DEFCONFIG:vexpress-qemu = "multi_v7_defconfig"
 KCONFIG_MODE = "--alldefconfig"
 

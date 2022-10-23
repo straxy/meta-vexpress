@@ -7,7 +7,7 @@ DEPENDS = "u-boot-mkimage-native"
 
 INHIBIT_DEFAULT_DEPS = "1"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI = "file://boot.cmd"
 
